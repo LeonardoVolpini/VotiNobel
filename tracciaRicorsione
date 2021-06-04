@@ -1,0 +1,38 @@
+input:
+	-insieme di oggetti di tipo esame (PARTENZA)
+	-numero di crediti con cui bisogna partecipare (m)
+
+output:
+	-insieme di oggetti di tipo esame (set), sottoinsieme di partenza tale che
+	la somma di esame.crediti()==m && media esame.voto() sia max
+	
+
+APPROCIO 1 (il piu' stipido)
+	Ad ogni livello della ricorsione aggiungo un esame -> devo decidere quale -> li provo tutti
+	simile agli anagrammi
+	
+	Soluz parziale: sottoinsieme di esattamente L elementi ( L e' il livello )
+	
+	Generazione soluz. parziale: per tutti i casi che non ho ancora considerato (esami non compresi in parziale):
+		provo ad aggiungere
+		faccio ricorsione
+		faccio backtracking
+		
+	Casi terminali: 
+		- L==N -> non ci sono piu' esami da aggiungere
+			Controllo soluz. parziale:
+				PARZIALE.sommacrediti()==m
+					se PARZIALE.media()> di tutte le medie viste fino ad ora -> tengo traccia di PARZIALE
+				PARZIALE.sommacrediti()!=m  -> abbandono la ricorsione
+		- PARZIALE.sommacrediti()>= m -> mi fermo subito
+			se >m -> scarto PARZIALE e non vado avanti
+			se ==m -> controllo PARZIALE
+	
+	
+APPROCIO 2:
+	Il livello L  indica quale corso sto decidendo di mettere o non mettere nella soluzione.
+	
+	
+	
+	
+	
